@@ -40,7 +40,6 @@ if ( !class_exists( 'beingThere' ) ) {
 			define( 'BEINGTHERE_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 			define( 'BEINGTHERE_PLUGIN_FNAME', plugin_basename( __FILE__ ) );
 			define( 'BEINGTHERE_CHECKBOX_PREFIX', 'beingtherepresence-' );
-			define( 'BEINGTHERE_COMMENT_PREFIX', 'beingtherecomment-' );
 
 			$saveduserchoices = array();
 
@@ -85,13 +84,7 @@ if ( !class_exists( 'beingThere' ) ) {
 		public function register_assets() {
 
 			// enqueue styles
-			wp_enqueue_style( 'wp-choir-style', plugin_dir_url( __FILE__ ) . 'style.css' );
-
-			// this scipt will be localized
-			global $post;
-			if ( has_shortcode( $post->post_content, 'beingthere_presence' ) ) {
-				wp_enqueue_script( 'being-there-script', plugin_dir_url( __FILE__ ) . 'being-there.js', array( 'jquery' ), BEINGTHERE_VERSION . date('Hms'), true );
-			}
+			wp_enqueue_style( 'being-there-style', plugin_dir_url( __FILE__ ) . 'style.css' );
 
 			// use dash icons in front end
 			wp_enqueue_style( 'dashicons' );
@@ -225,7 +218,7 @@ if ( !class_exists( 'beingThere' ) ) {
 		public function meta_boxes_callback( $post ) {
 
 			// Nonce field
-			wp_nonce_field('wp_choir_datetime', 'wp_choir_datetime_nonce');
+			wp_nonce_field('being_there_datetime', 'being_there_datetime_nonce');
 
 			$_date = get_post_meta( $post->ID, 'beingthere-date', true );
 			$_time = get_post_meta( $post->ID, 'beingthere-time', true );
@@ -262,11 +255,11 @@ if ( !class_exists( 'beingThere' ) ) {
 			}
 
 			// verify nonce
-			if ( ! isset( $_POST['wp_choir_datetime_nonce'] ) ) {
+			if ( ! isset( $_POST['being_there_datetime_nonce'] ) ) {
 				return;
 			}
 
-			if ( ! wp_verify_nonce( $_POST['wp_choir_datetime_nonce'], 'wp_choir_datetime' ) ) {
+			if ( ! wp_verify_nonce( $_POST['being_there_datetime_nonce'], 'being_there_datetime' ) ) {
 				return;
 			}
 
@@ -305,26 +298,16 @@ if ( !class_exists( 'beingThere' ) ) {
 
 				foreach( $dates as $date ) {
 
-					$presence = $_POST[ BEINGTHERE_CHECKBOX_PREFIX . $date->ID ];
-					$comment = $_POST[ BEINGTHERE_COMMENT_PREFIX . $date->ID ];
-
-					// TODO why do I sometimes get an array for this value?
-					if ( is_array( $presence ) ) {
-						$presence = array_shift( $presence );
-					}
-
-					// present?
+					// in POST data?
 					if ( array_key_exists( BEINGTHERE_CHECKBOX_PREFIX . $date->ID, $_POST ) ) {
-						update_user_meta( $current_user->ID, 'beingthere_user_presence-' . $date->ID, $presence );
-					} else {
-						delete_user_meta( $current_user->ID, 'beingthere_user_presence-' . $date->ID );
-					}
 
-					// comment added?
-					if ( array_key_exists( BEINGTHERE_COMMENT_PREFIX . $date->ID, $_POST ) && ( '' != $_POST[ BEINGTHERE_COMMENT_PREFIX . $date->ID ] ) ) {
-						update_user_meta( $current_user->ID, 'beingthere_user_comment-' . $date->ID, $_POST[ BEINGTHERE_COMMENT_PREFIX . $date->ID ] );
+						$presence = $_POST[ BEINGTHERE_CHECKBOX_PREFIX . $date->ID ];
+						update_user_meta( $current_user->ID, 'beingthere_user_presence-' . $date->ID, $presence );
+
 					} else {
-						delete_user_meta( $current_user->ID, 'beingthere_user_comment-' . $date->ID );
+
+						delete_user_meta( $current_user->ID, 'beingthere_user_presence-' . $date->ID );
+
 					}
 
 				}
@@ -391,59 +374,30 @@ if ( !class_exists( 'beingThere' ) ) {
 						$dates->the_post();
 
 						$choicesaved = get_user_meta( $current_user->ID, 'beingthere_user_presence-' . get_the_id(), true );
-						// TODO why do I sometimes get an array for this value?
-						if ( is_array( $choicesaved ) ) {
-							$choicesaved = array_shift( $choicesaved );
-						}
-
-						$commentsaved = get_user_meta( $current_user->ID, 'beingthere_user_comment-' . get_the_id(), true );
-						if ( !$commentsaved ) {
-							$commentsaved = '';
-						}
 
 						$saveduserchoices[ get_the_id() ] = $choicesaved;
-						$icontoshow = 'yes';
-						$hideremark = ' style="display: none;" ';
-						switch( $choicesaved ) {
-							case 2:
-								$icontoshow = 'edit';
-								$hideremark = '';
-								break;
-							case 1:
-							case '':
-								$icontoshow = 'yes';
-								break;
-							case 0:
-								$icontoshow = 'no';
-								break;
-						}
 						$_date = strtotime( get_post_meta( get_the_ID(), 'beingthere-date', true ) );
 						$_time = get_post_meta( get_the_ID(), 'beingthere-time', true );
 
+						$_fieldname = BEINGTHERE_CHECKBOX_PREFIX . get_the_id();
 ?>
 						<tr class="<?php echo get_post_type(); ?>">
-							<td width="20">
-								<input type="hidden" id="beingtherepresence-<?php echo get_the_id(); ?>" name="<?php echo BEINGTHERE_CHECKBOX_PREFIX . get_the_id(); ?>" value="<?php echo $choicesaved; ?>" />
-								<span id="wp-choir-<?php echo get_the_id(); ?>" class="dashicons dashicons-wp-choir dashicons-<?php echo $icontoshow; ?>"></span>
+							<td class="switch-field">
+								<input type="radio" id="<?php echo $_fieldname; ?>_left" name="<?php echo $_fieldname; ?>" value="yes" />
+								<label for="<?php echo $_fieldname; ?>_left">Yes</label>
+								<input type="radio" id="<?php echo $_fieldname; ?>_right" name="<?php echo $_fieldname; ?>" value="no" />
+								<label for="<?php echo $_fieldname; ?>_right">No</label>
 							</td>
-							<td width="200"><?php echo date_i18n("j F Y", $_date ); ?></td>
-							<td width="80"><?php echo $_time; ?></td>
+							<td><?php echo date_i18n("j F Y", $_date ); ?></td>
+							<td><?php echo $_time; ?></td>
 							<td><?php echo get_the_title(); ?></td>
 						</tr>
 						<tr>
 							<td />
 							<td colspan="3"><i><?php the_content(); ?></i></td>
 						</tr>
-						<tr id="<?php echo 'wp-choir-comment-' . get_the_id(); ?>"<?php echo $hideremark; ?>>
-							<td></td>
-							<td colspan=3>
-								<input type="text" name="<?php echo BEINGTHERE_COMMENT_PREFIX . get_the_id(); ?>" 
-									value="<?php echo $commentsaved; ?>" placeholder="<?php echo __( 'Extra info', 'being-there' ); ?>" />
-							</td>
-						</tr>
 <?php
 					}
-
 					echo '</table>';
 
 				} else {
@@ -461,9 +415,6 @@ if ( !class_exists( 'beingThere' ) ) {
 				</form>
 
 <?php
-
-			wp_localize_script( 'wp-choir-script', 'beingThereUserChoices', $saveduserchoices );
-
 		}
 
 
