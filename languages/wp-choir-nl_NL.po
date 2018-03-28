@@ -1,0 +1,131 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Choir\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-27 14:12+0000\n"
+"PO-Revision-Date: 2017-06-27 14:15+0000\n"
+"Last-Translator: Jeroen Smeets <jeroen@jeroensmeets.net>\n"
+"Language-Team: Dutch\n"
+"Language: nl-NL\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: wp-choir.php:78
+msgid "Choir member"
+msgstr "Koorlid"
+
+#: wp-choir.php:97 wp-choir.php:99 wp-choir.php:100
+msgid "Celebrations"
+msgstr "Vieringen"
+
+#: wp-choir.php:98
+msgid "Celebration"
+msgstr "Viering"
+
+#: wp-choir.php:101 wp-choir.php:140
+msgid "Add New"
+msgstr "Voeg toe"
+
+#: wp-choir.php:102
+msgid "Add New Celebration"
+msgstr "Voeg viering toe"
+
+#: wp-choir.php:103
+msgid "Edit Celebration"
+msgstr "Bewerk viering"
+
+#: wp-choir.php:104
+msgid "New Celebration"
+msgstr "Nieuwe viering"
+
+#: wp-choir.php:105
+msgid "View Celebration"
+msgstr "Bekijk viering"
+
+#: wp-choir.php:106
+msgid "Search Celebration"
+msgstr "Doorzoek vieringen"
+
+#: wp-choir.php:107
+msgid "No celebrations found"
+msgstr "Geen vieringen gevonden"
+
+#: wp-choir.php:108
+msgid "No celebrations found in trash"
+msgstr "Geen vieringen gevonden in de prullenbak"
+
+#: wp-choir.php:109
+msgid "All Celebrations"
+msgstr "Alle vieringen"
+
+#: wp-choir.php:136 wp-choir.php:138 wp-choir.php:139
+msgid "Rehearsals"
+msgstr "Repetities"
+
+#: wp-choir.php:137
+msgid "Rehearsal"
+msgstr "Repetitie"
+
+#: wp-choir.php:141
+msgid "Add New Rehearsal"
+msgstr "Voeg nieuwe repetitie toe"
+
+#: wp-choir.php:142
+msgid "Edit Rehearsal"
+msgstr "Bewerk repetitie"
+
+#: wp-choir.php:143
+msgid "New Rehearsal"
+msgstr "Nieuwe repetitie"
+
+#: wp-choir.php:144
+msgid "View Rehearsal"
+msgstr "Bekijk repetitie"
+
+#: wp-choir.php:145
+msgid "Search Rehearsal"
+msgstr "Doorzoek repetities"
+
+#: wp-choir.php:146
+msgid "No rehearsals found"
+msgstr "Geen repetities gevonden"
+
+#: wp-choir.php:147
+msgid "No rehearsals found in trash"
+msgstr "Geen repetities gevonden in de prullenbak"
+
+#: wp-choir.php:148
+msgid "All Rehearsals"
+msgstr "Alle repetities"
+
+#: wp-choir.php:222
+msgid "You must be logged in to view this page."
+msgstr "U kunt uw aan- en afwezigheid alleen invoeren als u ingelogd bent."
+
+#: wp-choir.php:251
+msgid "Save rehearsal presence"
+msgstr "Sla aanwezigheid op"
+
+#: wp-choir.php:259
+msgid "No dates found"
+msgstr "Geen data gevonden"
+
+#. Name of the plugin
+msgid "WP Choir"
+msgstr "WP Choir"
+
+#. Description of the plugin
+msgid "Organize the administration of your choir in WordPress"
+msgstr "Voor de organisatie van uw koor in WordPress"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://jeroensmeets.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "Jeroen Smeets"
+msgstr ""

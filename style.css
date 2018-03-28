@@ -1,0 +1,13 @@
+/* stylesheet for WordPress plugin WP Choir */
+
+.dashicons-wp-choir {
+	border: 1px solid #eee;
+	border-radius: 50%;
+	width: 24px; height: 24px;
+	padding-top: 1px;
+	cursor: pointer;
+}
+
+.wp-choir-comment {
+	display: none;
+}
