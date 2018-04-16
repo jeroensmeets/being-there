@@ -43,7 +43,8 @@ if ( !class_exists( 'beingThere' ) ) {
 
 			define( 'BEINGTHERE_STATUS_PRESENT', 'yes' );
 			define( 'BEINGTHERE_STATUS_ABSENT', 'no' );
-			// define( 'BEINGTHERE_STATUS_MAYBE', 'maybe' );
+			define( 'BEINGTHERE_STATUS_PRESENT_LABEL', __( 'yes', 'being-there' ) );
+			define( 'BEINGTHERE_STATUS_ABSENT', __( 'no', 'being-there' ) );
 
 			// load text domain
 			load_plugin_textdomain( 'being-there', false, plugin_basename( dirname( __FILE__ ) ) . "/languages/" );
@@ -388,12 +389,12 @@ if ( !class_exists( 'beingThere' ) ) {
 									name="<?php echo $_fieldname; ?>" value="<?php echo BEINGTHERE_STATUS_PRESENT; ?>"
 									<?php checked( $choicesaved, BEINGTHERE_STATUS_PRESENT ); ?>
 								/>
-								<label for="<?php echo $_fieldname; ?>_yes"><?php echo __( BEINGTHERE_STATUS_PRESENT, 'being-there' ); ?></label>
+								<label for="<?php echo $_fieldname; ?>_yes"><?php echo BEINGTHERE_STATUS_PRESENT_LABEL; ?></label>
 								<input type="radio" id="<?php echo $_fieldname; ?>_no" 
 									name="<?php echo $_fieldname; ?>" value="<?php echo BEINGTHERE_STATUS_ABSENT; ?>" 
 									<?php checked( $choicesaved, BEINGTHERE_STATUS_ABSENT ); ?>
 								/>
-								<label for="<?php echo $_fieldname; ?>_no"><?php echo __( BEINGTHERE_STATUS_ABSENT, 'being-there' ); ?></label>
+								<label for="<?php echo $_fieldname; ?>_no"><?php echo BEINGTHERE_STATUS_ABSENT_LABEL; ?></label>
 							</td>
 							<td><?php echo date_i18n("j F Y", $_date ); ?></td>
 							<td><?php echo $_time; ?></td>
