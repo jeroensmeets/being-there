@@ -44,7 +44,7 @@ if ( !class_exists( 'beingThere' ) ) {
 			define( 'BEINGTHERE_STATUS_PRESENT', 'yes' );
 			define( 'BEINGTHERE_STATUS_ABSENT', 'no' );
 			define( 'BEINGTHERE_STATUS_PRESENT_LABEL', __( 'yes', 'being-there' ) );
-			define( 'BEINGTHERE_STATUS_ABSENT', __( 'no', 'being-there' ) );
+			define( 'BEINGTHERE_STATUS_ABSENT_LABEL', __( 'no', 'being-there' ) );
 
 			// load text domain
 			load_plugin_textdomain( 'being-there', false, plugin_basename( dirname( __FILE__ ) ) . "/languages/" );
