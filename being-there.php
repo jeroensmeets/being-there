@@ -86,7 +86,7 @@ if ( !class_exists( 'beingThere' ) ) {
 		public function register_assets() {
 
 			// enqueue styles
-			wp_enqueue_style( 'being-there-style', plugin_dir_url( __FILE__ ) . 'style.css' );
+			wp_enqueue_style( 'being-there-style', plugin_dir_url( __FILE__ ) . 'style.css', array(), date( 'dMYHi' ) );
 
 			// use dash icons in front end
 			wp_enqueue_style( 'dashicons' );
