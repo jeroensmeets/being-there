@@ -1,0 +1,163 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Being There\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-16 20:59+0000\n"
+"PO-Revision-Date: 2018-04-16 21:05+0000\n"
+"Last-Translator: Jeroen Smeets <jeroen@jeroensmeets.net>\n"
+"Language-Team: Nederlands\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: being-there.php:445
+msgid "Aantal aanwezig"
+msgstr ""
+
+#: being-there.php:127 being-there.php:166
+msgid "Add New"
+msgstr "Voeg een nieuwe toe"
+
+#: being-there.php:128
+msgid "Add New Celebration"
+msgstr "Voeg een viering toe"
+
+#: being-there.php:167
+msgid "Add New Rehearsal"
+msgstr "Voeg een repetitie toe"
+
+#: being-there.php:135
+msgid "All Celebrations"
+msgstr "Alle vieringen"
+
+#: being-there.php:174
+msgid "All Rehearsals"
+msgstr "Alle repetities"
+
+#. Name of the plugin
+msgid "Being There"
+msgstr ""
+
+#: being-there.php:124
+msgid "Celebration"
+msgstr "Viering"
+
+#: being-there.php:123 being-there.php:125 being-there.php:126
+msgid "Celebrations"
+msgstr "Vieringen"
+
+#: being-there.php:104
+msgid "Choir member"
+msgstr "Koorlid"
+
+#: being-there.php:231
+msgid "Date"
+msgstr "Datum"
+
+#: being-there.php:209 being-there.php:210
+msgid "Date and time"
+msgstr "Datum en tijd"
+
+#: being-there.php:444
+msgid "Datum"
+msgstr "Datum"
+
+#: being-there.php:129
+msgid "Edit Celebration"
+msgstr "Bewerk viering"
+
+#: being-there.php:168
+msgid "Edit Rehearsal"
+msgstr "Bewerk repetitie"
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://jeroensmeets.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "Jeroen Smeets"
+msgstr ""
+
+#: being-there.php:336
+msgid "Log In"
+msgstr "Log in"
+
+#: being-there.php:130
+msgid "New Celebration"
+msgstr "Nieuwe viering"
+
+#: being-there.php:169
+msgid "New Rehearsal"
+msgstr "Nieuwe repetitie"
+
+#: being-there.php:133
+msgid "No celebrations found"
+msgstr "Geen vieringen gevonden"
+
+#: being-there.php:134
+msgid "No celebrations found in trash"
+msgstr "Geen vieringen gevonden in de prullenbak"
+
+#: being-there.php:412
+msgid "No dates found"
+msgstr "Geen data gevonden"
+
+#: being-there.php:172
+msgid "No rehearsals found"
+msgstr "Geen repetities gevonden"
+
+#: being-there.php:173
+msgid "No rehearsals found in trash"
+msgstr "Geen repetities gevonden in de prullenbak"
+
+#. Description of the plugin
+msgid "Organize the administration of your choir in WordPress"
+msgstr "Regel de hele administratie van je koor in WordPress"
+
+#: being-there.php:334
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: being-there.php:163
+msgid "Rehearsal"
+msgstr "Repetitie"
+
+#: being-there.php:162 being-there.php:164 being-there.php:165
+msgid "Rehearsals"
+msgstr "Repetities"
+
+#: being-there.php:335
+msgid "Remember Me"
+msgstr "Onthoud mij"
+
+#: being-there.php:132
+msgid "Search Celebration"
+msgstr "Zoek een viering"
+
+#: being-there.php:171
+msgid "Search Rehearsal"
+msgstr "Zoek een repetitie"
+
+#: being-there.php:237
+msgid "Time"
+msgstr "Tijd"
+
+#: being-there.php:333
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: being-there.php:131
+msgid "View Celebration"
+msgstr "Bekijk viering"
+
+#: being-there.php:170
+msgid "View Rehearsal"
+msgstr "Bekijk repetitie"
+
+#: being-there.php:326
+msgid "You must be logged in to view this page."
+msgstr "Je moet ingelogd zijn om deze pagina te bekijken."

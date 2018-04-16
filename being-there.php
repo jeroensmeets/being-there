@@ -418,7 +418,7 @@ if ( !class_exists( 'beingThere' ) ) {
 			}
 ?>
 
-					<input type="submit" style="padding: 7px 12px; background-color: #8958B5; border: 0; color: white; font-size: 15px;" value="<?php echo __( 'Save rehearsal presence', 'wp-choir' ); ?>" />
+					<input type="submit" style="padding: 7px 12px; background-color: #8958B5; border: 0; color: white; font-size: 15px;" value="<?php echo __( 'Save rehearsal presence', 'being-there' ); ?>" />
 				</form>
 
 <?php

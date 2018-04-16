@@ -1,0 +1,164 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Being There\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-16 20:59+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: being-there.php:445
+msgid "Aantal aanwezig"
+msgstr ""
+
+#: being-there.php:127 being-there.php:166
+msgid "Add New"
+msgstr ""
+
+#: being-there.php:128
+msgid "Add New Celebration"
+msgstr ""
+
+#: being-there.php:167
+msgid "Add New Rehearsal"
+msgstr ""
+
+#: being-there.php:135
+msgid "All Celebrations"
+msgstr ""
+
+#: being-there.php:174
+msgid "All Rehearsals"
+msgstr ""
+
+#. Name of the plugin
+msgid "Being There"
+msgstr ""
+
+#: being-there.php:124
+msgid "Celebration"
+msgstr ""
+
+#: being-there.php:123 being-there.php:125 being-there.php:126
+msgid "Celebrations"
+msgstr ""
+
+#: being-there.php:104
+msgid "Choir member"
+msgstr ""
+
+#: being-there.php:231
+msgid "Date"
+msgstr ""
+
+#: being-there.php:209 being-there.php:210
+msgid "Date and time"
+msgstr ""
+
+#: being-there.php:444
+msgid "Datum"
+msgstr ""
+
+#: being-there.php:129
+msgid "Edit Celebration"
+msgstr ""
+
+#: being-there.php:168
+msgid "Edit Rehearsal"
+msgstr ""
+
+#. URI of the plugin
+#. Author URI of the plugin
+msgid "https://jeroensmeets.com"
+msgstr ""
+
+#. Author of the plugin
+msgid "Jeroen Smeets"
+msgstr ""
+
+#: being-there.php:336
+msgid "Log In"
+msgstr ""
+
+#: being-there.php:130
+msgid "New Celebration"
+msgstr ""
+
+#: being-there.php:169
+msgid "New Rehearsal"
+msgstr ""
+
+#: being-there.php:133
+msgid "No celebrations found"
+msgstr ""
+
+#: being-there.php:134
+msgid "No celebrations found in trash"
+msgstr ""
+
+#: being-there.php:412
+msgid "No dates found"
+msgstr ""
+
+#: being-there.php:172
+msgid "No rehearsals found"
+msgstr ""
+
+#: being-there.php:173
+msgid "No rehearsals found in trash"
+msgstr ""
+
+#. Description of the plugin
+msgid "Organize the administration of your choir in WordPress"
+msgstr ""
+
+#: being-there.php:334
+msgid "Password"
+msgstr ""
+
+#: being-there.php:163
+msgid "Rehearsal"
+msgstr ""
+
+#: being-there.php:162 being-there.php:164 being-there.php:165
+msgid "Rehearsals"
+msgstr ""
+
+#: being-there.php:335
+msgid "Remember Me"
+msgstr ""
+
+#: being-there.php:132
+msgid "Search Celebration"
+msgstr ""
+
+#: being-there.php:171
+msgid "Search Rehearsal"
+msgstr ""
+
+#: being-there.php:237
+msgid "Time"
+msgstr ""
+
+#: being-there.php:333
+msgid "Username"
+msgstr ""
+
+#: being-there.php:131
+msgid "View Celebration"
+msgstr ""
+
+#: being-there.php:170
+msgid "View Rehearsal"
+msgstr ""
+
+#: being-there.php:326
+msgid "You must be logged in to view this page."
+msgstr ""
