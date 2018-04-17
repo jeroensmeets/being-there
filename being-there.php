@@ -43,8 +43,6 @@ if ( !class_exists( 'beingThere' ) ) {
 
 			define( 'BEINGTHERE_STATUS_PRESENT', 'yes' );
 			define( 'BEINGTHERE_STATUS_ABSENT', 'no' );
-			define( 'BEINGTHERE_STATUS_PRESENT_LABEL', __( 'yes', 'being-there' ) );
-			define( 'BEINGTHERE_STATUS_ABSENT_LABEL', __( 'no', 'being-there' ) );
 
 			// load text domain
 			load_plugin_textdomain( 'being-there', false, plugin_basename( dirname( __FILE__ ) ) . "/languages/" );
@@ -297,19 +295,16 @@ if ( !class_exists( 'beingThere' ) ) {
 
 			foreach ( array( 'celebration', 'rehearsal' ) as $_posttype ) {
 
-				$dates = get_posts( array( 'post_type' => array( $_posttype ), 'post_status' => 'publish' ) );
+				$dates = get_posts( array( 'post_type' => array( $_posttype ), 'post_status' => 'publish', 'posts_per_page' => -1 ) );
 
 				foreach( $dates as $date ) {
 
 					// in POST data?
+					delete_user_meta( $current_user->ID, 'beingthere_user_presence-' . $date->ID );
 					if ( array_key_exists( BEINGTHERE_CHECKBOX_PREFIX . $date->ID, $_POST ) ) {
 
 						$presence = $_POST[ BEINGTHERE_CHECKBOX_PREFIX . $date->ID ];
 						update_user_meta( $current_user->ID, 'beingthere_user_presence-' . $date->ID, $presence );
-
-					} else {
-
-						delete_user_meta( $current_user->ID, 'beingthere_user_presence-' . $date->ID );
 
 					}
 
@@ -377,6 +372,9 @@ if ( !class_exists( 'beingThere' ) ) {
 						$dates->the_post();
 
 						$choicesaved = get_user_meta( $current_user->ID, 'beingthere_user_presence-' . get_the_id(), true );
+						if ( '' == $choicesaved ) {
+							$choicesaved = BEINGTHERE_STATUS_PRESENT;
+						}
 
 						$_date = strtotime( get_post_meta( get_the_ID(), 'beingthere-date', true ) );
 						$_time = get_post_meta( get_the_ID(), 'beingthere-time', true );
@@ -389,12 +387,12 @@ if ( !class_exists( 'beingThere' ) ) {
 									name="<?php echo $_fieldname; ?>" value="<?php echo BEINGTHERE_STATUS_PRESENT; ?>"
 									<?php checked( $choicesaved, BEINGTHERE_STATUS_PRESENT ); ?>
 								/>
-								<label for="<?php echo $_fieldname; ?>_yes"><?php echo BEINGTHERE_STATUS_PRESENT_LABEL; ?></label>
+								<label for="<?php echo $_fieldname; ?>_yes"><?php echo __( 'yes', 'being-there' ); ?></label>
 								<input type="radio" id="<?php echo $_fieldname; ?>_no" 
 									name="<?php echo $_fieldname; ?>" value="<?php echo BEINGTHERE_STATUS_ABSENT; ?>" 
 									<?php checked( $choicesaved, BEINGTHERE_STATUS_ABSENT ); ?>
 								/>
-								<label for="<?php echo $_fieldname; ?>_no"><?php echo BEINGTHERE_STATUS_ABSENT_LABEL; ?></label>
+								<label for="<?php echo $_fieldname; ?>_no"><?php echo __( 'no', 'being-there' ); ?></label>
 							</td>
 							<td><?php echo date_i18n("j F Y", $_date ); ?></td>
 							<td><?php echo $_time; ?></td>

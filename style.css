@@ -10,6 +10,7 @@ table.beingthere-presence-dates, table.beingthere-presence-dates th, table.being
 	padding: 10px;
 	overflow: hidden;
 	width: 150px;
+	word-wrap: normal;
 }
 
 .switch-field input {
@@ -27,13 +28,15 @@ table.beingthere-presence-dates, table.beingthere-presence-dates th, table.being
 
 .switch-field label {
 	display: inline-block;
-	width: 30px;
+	width: 60px;
 	background-color: #e4e4e4;
-	color: rgba(0, 0, 0, 0.6);
+	color: rgba(0, 0, 0, 0.9) !important;
 	font-size: 14px;
 	font-weight: normal;
 	text-align: center;
 	text-shadow: none;
+	text-transform: uppercase;
+	min-width: 40px;
 	padding: 6px 14px;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
